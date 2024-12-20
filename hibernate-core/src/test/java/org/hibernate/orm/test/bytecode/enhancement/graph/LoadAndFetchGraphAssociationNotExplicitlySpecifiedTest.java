@@ -53,7 +53,7 @@ import static org.hibernate.graph.GraphSemantic.FETCH;
 )
 @SessionFactory(useCollectingStatementInspector = true)
 @JiraKey("HHH-18489")
-@BytecodeEnhanced()
+@BytecodeEnhanced(runNotEnhancedAsWell = true)
 @EnhancementOptions(lazyLoading = true)
 @ServiceRegistry(settings = @Setting(name = AvailableSettings.MAX_FETCH_DEPTH, value = ""))
 public class LoadAndFetchGraphAssociationNotExplicitlySpecifiedTest {
