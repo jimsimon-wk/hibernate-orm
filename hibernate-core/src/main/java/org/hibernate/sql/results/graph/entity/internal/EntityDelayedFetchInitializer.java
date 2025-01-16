@@ -202,7 +202,7 @@ public class EntityDelayedFetchInitializer
 						// Try to load a PersistentAttributeInterceptable. If we get one, we can add the lazy
 						// field to the interceptor. If we don't get one, we load the entity by unique key.
 						PersistentAttributeInterceptable persistentAttributeInterceptable = null;
-						if (getParent().isEntityInitializer() && isLazyByGraph( rowProcessingState )) {
+						if ( getParent().isEntityInitializer() && isLazyByGraph( rowProcessingState ) ) {
 							final Object resolvedInstance =
 									getParent().asEntityInitializer().getResolvedInstance( rowProcessingState );
 							persistentAttributeInterceptable =
