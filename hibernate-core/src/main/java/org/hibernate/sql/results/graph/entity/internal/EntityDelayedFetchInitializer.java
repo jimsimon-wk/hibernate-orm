@@ -198,7 +198,8 @@ public class EntityDelayedFetchInitializer
 					// because we can't generate a proxy based on the unique key yet
 					if ( referencedModelPart.isLazy() ) {
 						instance = UNFETCHED_PROPERTY;
-					} else {
+					}
+					else {
 						// Try to load a PersistentAttributeInterceptable. If we get one, we can add the lazy
 						// field to the interceptor. If we don't get one, we load the entity by unique key.
 						PersistentAttributeInterceptable persistentAttributeInterceptable = null;
@@ -213,7 +214,8 @@ public class EntityDelayedFetchInitializer
 							final LazyAttributeLoadingInterceptor persistentAttributeInterceptor = (LazyAttributeLoadingInterceptor) persistentAttributeInterceptable.$$_hibernate_getInterceptor();
 							persistentAttributeInterceptor.addLazyFieldByGraph( navigablePath.getLocalName() );
 							instance = UNFETCHED_PROPERTY;
-						} else {
+						}
+						else {
 							instance = concreteDescriptor.loadByUniqueKey(
 									uniqueKeyPropertyName,
 									data.entityIdentifier,
